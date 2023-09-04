@@ -7,8 +7,8 @@
     <ProjectGuid>{899FD72C-EFF5-4725-BBAF-86CD5A931248}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TextProducer</RootNamespace>
-    <AssemblyName>TextProducer</AssemblyName>
+    <RootNamespace>Business_Logic</RootNamespace>
+    <AssemblyName>Business_Logic</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Business_Logic.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -44,7 +45,26 @@
     <Compile Include="Entities\PersonalStyle.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Interfaces\ICustomClass.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DocFX\docfx_project\.gitignore" />
+    <Content Include="DocFX\docfx_project\api\.gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DocFX\docfx_project\api\index.md" />
+    <None Include="DocFX\docfx_project\api\toc.yml" />
+    <None Include="DocFX\docfx_project\articles\intro.md" />
+    <None Include="DocFX\docfx_project\articles\toc.yml" />
+    <None Include="DocFX\docfx_project\docfx.json" />
+    <None Include="DocFX\docfx_project\index.md" />
+    <None Include="DocFX\docfx_project\toc.yml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DocFX\docfx_project\apidoc\" />
+    <Folder Include="DocFX\docfx_project\images\" />
+    <Folder Include="DocFX\docfx_project\src\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TextProducer\Business_Logic.csproj" />
+    <ProjectReference Include="..\Business_Logic\Business_Logic.csproj" />
   </ItemGroup>
 
 </Project>

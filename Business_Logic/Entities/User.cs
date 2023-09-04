@@ -1,41 +1,34 @@
 ﻿using System;
 using Business_Logic.Entities;
+using Business_Logic.Interfaces;
 
 namespace Business_Logic
 {
     /* 
-         * Educational notes to myself:
-         * Immutability: Keyword 'sealed' indicates end of class inheritance chain
-        */
-    public sealed class User
+        * Educational notes to myself:
+        * Immutability: Keyword 'sealed' indicates end of class inheritance chain (This should be in my notes, not here)
+    */
+    /// <summary>An Entity Framework entity class that encapsulates a natural user of a software system.</summary>
+    public sealed class User : ICustomClass
     {
-        /* 
-         * Educational notes to myself:
-         * Alternatives: "" (zero-length string) and default (null)
-         * Preference: String.Empty conveys the intent of initialising an empty string.
-         * That's not null, and a static read-only instance rather than arbitrary hard-coded "".
-        */
+        // Auto-implemented public properties with wich EF can work directly
+        /// <summary>Public id property on the user entity class</summary>
+        public int Id { get; private set; }
+        /// <summary>Public username property on the user entity class</summary>
+        public string Username { get; set; }
+        /// <summary>Public password property on the user entity class</summary>
+        public string Password { get; set; }
+        /// <summary>Public full name property on the user entity class</summary>
+        public string FullName { get; set; }
+        /// <summary>Public personal style property on the user entity class</summary>
+        public PersonalStyle PersonalStyle { get; set; }
 
-        private string _id = String.Empty;
-        private string _username = String.Empty;
-        private string _password = String.Empty;
-        private string _fullName = String.Empty;
-        private PersonalStyle _personalStyle = default;
-
-        private static string DemoText
+        // Parameterised constructor
+        /// <summary>Construct a new User object with an initialised PersonalStyle instance.</summary>
+        public User()
         {
-            get => _demoText;
-            set => _demoText = value ?? throw new ArgumentNullException(nameof(value), "Text cannot be null");
-    }
-
-
-        public static void ChangeText(string newText)
-        {
-            if (string.IsNullOrWhiteSpace(newText))
-            {
-                throw new ArgumentException("Text cannot be null, empty, or consist only of white-space", nameof(newText));
-            }
-            DemoText = newText;
+            // Initialize with a new PersonalStyle instance
+            PersonalStyle = new PersonalStyle();
         }
     }
 }
